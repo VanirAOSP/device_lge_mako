@@ -266,4 +266,7 @@
          it is disabled by default so devices need to add an overlay to enable-->
     <string name="config_fastChargePath" translatable="false">/sys/module/msm_otg/parameters/fast_charge</string>
 
+    <!-- Setting to false will disable the IME switcher implementation for tablets -->
+	<bool name="config_show_IMEswitcher">true</bool>
+
 </resources>
