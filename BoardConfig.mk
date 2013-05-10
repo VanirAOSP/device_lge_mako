@@ -106,4 +106,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/mako
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+TARGET_QCOM_AUDIO_VARIANT := caf
+
 -include vendor/lge/mako/BoardConfigVendor.mk
