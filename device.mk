@@ -32,15 +32,15 @@ PRODUCT_PACKAGES := \
 	lights.mako
 
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
+	charger_res_images \
+	charger
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-        LiveWallpapers \
-        LiveWallpapersPicker \
-        VisualizationWallpapers \
-        librs_jni
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	VisualizationWallpapers \
+	librs_jni
 
 LOCAL_KERNEL := device/lge/mako/kernel
 
@@ -109,26 +109,26 @@ PRODUCT_COPY_FILES += \
 
 # NFC packages
 PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    nfc_nci.mako \
-    NfcNci \
-    Tag \
-    com.android.nfc_extras
+	libnfc-nci \
+	libnfc_nci_jni \
+	nfc_nci.mako \
+	NfcNci \
+	Tag \
+	com.android.nfc_extras
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/lge/mako/nfc/nfcee_access.xml
+	NFCEE_ACCESS_PATH := device/lge/mako/nfc/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := device/lge/mako/nfc/nfcee_access_debug.xml
+	NFCEE_ACCESS_PATH := device/lge/mako/nfc/nfcee_access_debug.xml
 endif
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
-    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    device/lge/mako/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+	$(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+	frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+	frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+	device/lge/mako/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
 	libmmcamera_interface
 
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
+	libmm-omxcore \
 	libdivxdrmdecrypt \
 	libOmxVdec \
 	libOmxVenc \
@@ -221,8 +221,8 @@ PRODUCT_PACKAGES += \
 	bdAddrLoader \
 	libwfcu \
 	conn_init \
-    charger_touch \
-    keystore.msm8960
+	charger_touch \
+	keystore.msm8960
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
@@ -239,26 +239,29 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true
+	media.aac_51_output_enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        debug.egl.recordable.rgba8888=1
+	debug.egl.recordable.rgba8888=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-       ro.qc.sensors.wl_dis=true
+	ro.qc.sensors.wl_dis=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
 # Charging LED property
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.enable-charging-led=0
+	persist.sys.enable-charging-led=0
 
 # for bugmailer
 PRODUCT_PACKAGES += send_bug
 PRODUCT_COPY_FILES += \
 	system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
 	system/extras/bugmailer/send_bug:system/bin/send_bug
+
+PRODUCT_COPY_FILES += \
+	device/lge/mako/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
