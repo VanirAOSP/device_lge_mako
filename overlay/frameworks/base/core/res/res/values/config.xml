@@ -284,6 +284,8 @@
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <!-- TODO: THIS
     <integer name="config_deviceHardwareKeys">0</integer>
+    -->
 
 </resources>
