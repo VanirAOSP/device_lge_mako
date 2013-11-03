@@ -35,14 +35,12 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
-ifneq ($(findstring svelte, $(TARGET_PRODUCT)),)
-LOCAL_KERNEL := device/lge/mako_svelte-kernel/kernel
-else
-LOCAL_KERNEL := device/lge/mako-kernel/kernel
-endif
+LOCAL_KERNEL := device/lge/mako/kernel
 
+ifneq ($(TARGET_PREBUILT_KERNEL),)
 PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel
+        $(LOCAL_KERNEL):kernel
+endif
 
 PRODUCT_COPY_FILES += \
 	device/lge/mako/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
