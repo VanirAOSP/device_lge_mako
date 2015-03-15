@@ -74,6 +74,7 @@ TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := false
+TARGET_USE_ION_COMPAT := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
